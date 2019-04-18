@@ -64,23 +64,36 @@ namespace ArraysAndFriendss
             Console.WriteLine("\n");
             var myQueue = new Queue<int>();
             myQueue.Enqueue(N);
-            List<int> numbahs = new List<int>();
+            //List<int> numbahs = new List<int>();
+            
             for (int j = 0; j < 16; j++)
             {
                 myQueue.Enqueue(N + 1);
                 myQueue.Enqueue(2 * N + 1);
                 myQueue.Enqueue(N + 2);
-                numbahs.Add(N);
+                //numbahs.Add(N);
+                Console.WriteLine(N);
                 myQueue.Dequeue();
                 N = myQueue.Peek();
             }
-            foreach (int numbah in myQueue)
+
+            while (myQueue.Count > 0)
             {
-                numbahs.Add(numbah);
+                Console.WriteLine(myQueue.Peek());
+                myQueue.Dequeue();
             }
-            Console.WriteLine(String.Join(",", numbahs));
-            Console.WriteLine(numbahs.Count());
+            
+
             Console.ReadLine();
+
+            //Console.WriteLine("\nThis is the old one:");
+            //foreach (int numbah in myQueue)
+            //{
+            //    numbahs.Add(numbah);
+            //}
+            //Console.WriteLine(String.Join(",", numbahs));
+            //Console.WriteLine(numbahs.Count());
+            //Console.ReadLine();
 
             // Number Paragraph
             // One situation where I would use a Linked List in the real world would be in a situation where you would have to have
